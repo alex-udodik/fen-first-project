@@ -9,6 +9,12 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+>
+
+claude
+.claude
+/claude
+\claude
 
 # testing
 /coverage
