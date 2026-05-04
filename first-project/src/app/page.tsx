@@ -1,7 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { supabase } from "@/lib/supabase";
+import CompareGame from "./components/CompareGame";
+export default async function Home() {
 
-export default function Home() {
+
+
+  const { data } = await supabase.rpc('get_random_tv_shows');
+  console.log(data);
+  let index = 0;
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -14,26 +22,9 @@ export default function Home() {
           <h2>Which has a higher rating?</h2>
         </div>
 
-        <div className={styles.compareImages}>
-          <div className="imageBox">
-            <div className="image">
-              <img src="https://cdn.lessgames.com/moreless/balenciaga.jpg" alt="" />
-            </div>
-            <div className="image_title">
-              <h3>Balencia</h3>
-            </div>
-          </div>
 
-          <div className="imageBox">
-            <div className="image">
-              <img src="https://cdn.lessgames.com/moreless/mario.jpg" alt="" />
-            </div>
-            <div className="image_title">
-              <h3>mario</h3>
-            </div>
-          </div>
 
-        </div>
+        <CompareGame shows={data} />
 
         <Image
           className={styles.logo}

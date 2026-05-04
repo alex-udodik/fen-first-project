@@ -93,6 +93,16 @@
   gap: 3rem;
 }
 
+
+.image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image:hover {
+  outline: 2px solid greenyellow;
+}
+
 .compareImages img {
   width: 400px;
   height: auto;

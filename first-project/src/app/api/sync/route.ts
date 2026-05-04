@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const HEADERS = { Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_TOKEN}` };
-const PAGES_TO_FETCH = 10; // 10 pages = 200 items per type
+const PAGES_TO_FETCH = 50; // 10 pages = 200 items per type
 
 async function fetchTMDBPage(type: 'movie' | 'tv', page: number) {
   const endpoint = type === 'movie' ? '/discover/movie' : '/discover/tv';
